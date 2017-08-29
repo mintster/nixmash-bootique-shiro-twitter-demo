@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootique Mvc Mustache Demo</title>
+    {{> com/nixmash/shiro/views/fragments/header.mustache }}
+</head>
+
+<body>
+
+<!-- Page Content -->
+<div>
+    <h1>Login Page</h1>
+
+    <div id="content">
+        <form action="login" method="POST" class="login-form">
+            <p><label for="username">Username</label><input name="username"/></p>
+            <p><label for="password">Password</label><input type="password" name="password"/></p>
+            <div class="login-form-bottom">
+                <p><input type="checkbox" name="rememberMe" value="true"/>Remember Me?</p>
+                <p><input type="submit" value="Submit" class="btn btn-primary"/></p>
+            </div>
+        </form>
+
+        {{#logout?}}LOGOUT!{{/logout?}}
+        <p class="lead">Use one of the following accounts or login with Twitter.</p>
+        <ul>
+            <li><strong>admin:</strong> <em>bob/password</em></li>
+            <li><strong>user:</strong> <em>ken/halo</em></li>
+        </ul>
+    </div>
+
+    {{> com/nixmash/shiro/views/fragments/footer.mustache }}
+
+    {{#model.hasMessage}}
+        <p class="error">There was a problem with your login information. Please try again.</p>
+    {{/model.hasMessage}}
+</div>
+</body>
+</html>

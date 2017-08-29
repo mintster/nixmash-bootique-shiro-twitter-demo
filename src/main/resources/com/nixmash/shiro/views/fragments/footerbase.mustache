@@ -1,0 +1,24 @@
+<p class="links"><a href="/">Home</a> | {{^user}}<a href="/login">Login</a> | {{/user}}<a href="/users">Registered Users Only</a> | <a
+        href="/admin">Administration</a>{{#user}} | <a href="/logout">Logout</a>{{/user}}</p>
+
+<div class="footer">
+    <h3>Current User:</h3>
+    <div class="currentuser">
+        {{#user}}
+            <div class="cuItem">
+                <div class="cuLabel">Username:</div>
+                <div class="cuValue">{{user.username}}</div>
+            </div>
+            <div class="cuItem">
+                <div class="cuLabel">Email:</div>
+                <div class="cuValue">{{user.email}}</div>
+            </div>
+        {{/user}}
+        {{^user}}
+            <div class="cuItem">
+                <div class="cuLabel">Username:</div>
+                <div class="cuValue">anonymous</div>
+            </div>
+        {{/user}}
+    </div>
+</div>

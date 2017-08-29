@@ -1,0 +1,42 @@
+
+jetty:
+  staticResourceBase: classpath:static/
+  connector:
+    port: 9000
+
+mvc:
+  templateBase: "classpath:"
+
+#log:
+#  level: debug
+#  loggers:
+#    org.apache.shiro:
+#      level: debug
+#    org.apache.jetty:
+#      level: debug
+
+jdbc:
+  MySQL:
+    url:  jdbc:mysql://localhost:3306/shirodb
+    driverClassName: com.mysql.jdbc.Driver
+    username: devuser
+    password: password
+    validationQuery: "SELECT 1"
+    testOnBorrow: true
+    testWhileIdle: true
+
+shiroweb:
+  urls:
+    "/admin" : roles[admin]
+    "/users"   : authc
+    "/login" : anon
+    "/" : anon
+    "/authorized" : anon
+
+
+
+
+
+
+
+

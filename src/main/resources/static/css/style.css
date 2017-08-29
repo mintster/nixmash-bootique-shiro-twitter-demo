@@ -1,0 +1,107 @@
+
+/*<editor-fold desc="Page Layout">*/
+body {
+    margin: 60px;
+    font-family: Ubuntu, Tahoma, Arial, Helvetica;
+    font-size: 16px;
+}
+p.links {
+    margin-top: 40px;
+}
+.footer {
+    margin-top: 40px;
+}
+#content {
+    margin: 60px 40px;
+}
+/*</editor-fold>*/
+
+/*<editor-fold desc="Login Form">*/
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+form.login-form p {
+    padding-bottom: 5px;
+}
+form.login-form {
+    margin: 40px 20px;
+}
+form.login-form label {
+    width: 100px;
+    text-align: right;
+    padding-right: 5px;
+}
+.login-form-bottom {
+    margin-left: 100px;
+}
+/*</editor-fold>*/
+
+/*<editor-fold desc="Signup Form">*/
+form.signup-form {
+    margin: 40px 20px;
+}
+form.signup-form label {
+    width: 180px;
+    text-align: right;
+    padding-right: 5px;
+}
+form.signup-form .signup-form-bottom {
+    margin-left: 180px;
+}
+/*</editor-fold>*/
+
+/*<editor-fold desc="Current User">*/
+.currentuser {
+    font-style: italic;
+}
+.cuItem {
+}
+.cuLabel {
+    float: left;
+    display: inline-block;
+    margin-right: 5px;
+    font-weight: bold;
+}
+.cuValue {
+}
+/*</editor-fold>*/
+
+/*<editor-fold desc="Twitter Button">*/
+form.twitter-signin {
+    margin-top: 40px;
+}
+
+.btn-twitter {
+    color: #ffffff;
+    background-color: #2daddc;
+    border-color: #0271bf;
+}
+
+.btn-twitter:hover,
+.btn-twitter:focus,
+.btn-twitter:active,
+.btn-twitter.active {
+    color: #ffffff;
+    background-color: #2095c0;
+    border-color: #014d82;
+}
+
+.btn-twitter.disabled,
+.btn-twitter[disabled],
+fieldset[disabled] .btn-twitter,
+.btn-twitter.disabled:hover,
+.btn-twitter[disabled]:hover,
+fieldset[disabled] .btn-twitter:hover,
+.btn-twitter.disabled:focus,
+.btn-twitter[disabled]:focus,
+fieldset[disabled] .btn-twitter:focus,
+.btn-twitter.disabled:active,
+.btn-twitter[disabled]:active,
+fieldset[disabled] .btn-twitter:active,
+.btn-twitter.disabled.active,
+.btn-twitter[disabled].active,
+fieldset[disabled] .btn-twitter.active {
+    background-color: #2daddc;
+    border-color: #0271bf;
+}
+/*</editor-fold>*/

@@ -1,0 +1,11 @@
+# Created by .ignore support plugin (hsz.mobi)
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+target
+
+/src/test/resources/twitter4j.properties
+/src/main/resources/twitter4j.properties

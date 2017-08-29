@@ -1,0 +1,79 @@
+--
+-- Table structure for table roles
+--
+DROP TABLE
+IF EXISTS roles;
+
+CREATE TABLE roles (
+  role_id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  permission VARCHAR (80) DEFAULT NULL,
+  role_name VARCHAR (45) DEFAULT NULL
+);
+
+--
+-- Table structure for table users
+--
+DROP TABLE
+IF EXISTS users;
+
+CREATE TABLE users (
+  user_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR (50) NOT NULL,
+  email VARCHAR (150) NOT NULL,
+  first_name VARCHAR (40) NOT NULL,
+  last_name VARCHAR (40) NOT NULL,
+  enabled TINYINT (1) DEFAULT '1' NOT NULL,
+  account_expired TINYINT (1) DEFAULT '0' NOT NULL,
+  account_locked TINYINT (1) DEFAULT '0' NOT NULL,
+  credentials_expired TINYINT (1) DEFAULT '0' NOT NULL,
+  has_avatar TINYINT (1) DEFAULT '0' NOT NULL,
+  user_key VARCHAR (25) DEFAULT '0000000000000000' NOT NULL,
+  provider_id VARCHAR (25) DEFAULT 'SITE' NOT NULL,
+  PASSWORD VARCHAR (255) NOT NULL,
+  version INT DEFAULT '0' NOT NULL
+);
+
+--
+-- Table structure for table user_roles
+--
+DROP TABLE
+IF EXISTS user_roles;
+
+CREATE TABLE user_roles (
+  id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  user_id BIGINT DEFAULT NULL,
+  role_id BIGINT DEFAULT NULL
+);
+
+DROP TABLE IF EXISTS user_social;
+
+CREATE TABLE user_social (
+  social_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR (50) NOT NULL,
+  provider_id VARCHAR (25) NOT NULL,
+  provider_userid VARCHAR (60) DEFAULT '' NOT NULL,
+  screen_name VARCHAR (50) NULL,
+  display_name VARCHAR (255) NULL,
+  profile_url VARCHAR (512) NULL,
+  image_url VARCHAR (512) NULL,
+  access_token VARCHAR (255) NOT NULL,
+  secret VARCHAR (255) NULL,
+  refresh_token VARCHAR (255) NULL,
+  expire_time BIGINT NULL,
+  CONSTRAINT UserConnectionProviderUser UNIQUE (username, provider_userid)
+);
+
+CREATE INDEX user_social_username_index ON user_social (username);
+
+INSERT INTO users (user_id, username, email, first_name, last_name, password)
+VALUES (1, 'bob', 'bob@aol.com', 'Bob', 'Planter', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8');
+INSERT INTO users (user_id, username, email, first_name, last_name, password)
+VALUES (2, 'ken', 'ken@aol.com', 'Ken', 'Stark', 'a4e63bcacf6c172ad84f9f4523c8f1acaf33676fa76d3258c67b7e7bbf16d777');
+
+INSERT INTO roles (role_id, permission, role_name) VALUES (1, 'nixmash:all', 'admin');
+INSERT INTO roles (role_id, permission, role_name) VALUES (2, 'nixmash:view', 'user');
+
+INSERT INTO user_roles (user_id, role_id) VALUES (1, 1);
+INSERT INTO user_roles (user_id, role_id) VALUES (1, 2);
+INSERT INTO user_roles (user_id, role_id) VALUES (2, 2);
+)

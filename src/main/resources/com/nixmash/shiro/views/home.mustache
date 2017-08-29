@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootique Mvc Mustache Demo</title>
+    {{> com/nixmash/shiro/views/fragments/header.mustache }}
+</head>
+
+<body>
+
+<!-- Page Content -->
+<div>
+{{^user}}<h1>Welcome!</h1>{{/user}}
+{{#user}}<h1>Welcome, {{user.displayName}}!</h1>{{/user}}
+
+    <div id="content">
+    <p class="lead">Welcome to the Bootique Shiro - Twitter Demo. The following local accounts are supported:</p>
+    <ul>
+        <li><strong>admin:</strong> <em>bob/password</em></li>
+        <li><strong>user:</strong> <em>ken/halo</em></li>
+    </ul>
+    </div>
+
+    {{> com/nixmash/shiro/views/fragments/footer.mustache }}
+
+</div>
+</body>
+</html>

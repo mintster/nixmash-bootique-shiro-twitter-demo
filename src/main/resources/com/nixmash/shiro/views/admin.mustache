@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootique Mvc Mustache Demo</title>
+    {{> com/nixmash/shiro/views/fragments/header.mustache }}
+</head>
+
+<body>
+
+<!-- Page Content -->
+<div>
+        <h1>For Administrators Only</h1>
+
+    <div id="content">
+        <p class="lead">Because you have an account with the "Admin" role you can view this page!</p>
+    </div>
+
+    {{> com/nixmash/shiro/views/fragments/footer.mustache }}
+
+</div>
+</body>
+</html>
