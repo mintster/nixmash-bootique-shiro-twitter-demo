@@ -15,8 +15,6 @@ public interface UserService {
     CurrentUser createCurrentUser(Subject subject);
 
     SocialUser addSocialUser(SocialUser user);
-
     SocialUser getSocialUser(String username);
-
     SocialUser getSocialUser(String accessToken, String secret);
 }

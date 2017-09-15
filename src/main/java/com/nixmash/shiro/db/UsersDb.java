@@ -12,8 +12,6 @@ public interface UsersDb {
     User getUser(String username);
     List<Role> getRoles(Long userId);
     SocialUser addSocialUser(SocialUser socialUser);
-
     SocialUser getSocialUser(String username);
-
     SocialUser getSocialUserByAccessToken(String accessToken, String secret);
 }

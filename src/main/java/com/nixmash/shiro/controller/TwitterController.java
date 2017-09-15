@@ -136,6 +136,10 @@ public class TwitterController implements Serializable {
     @Path("/authorized")
     public PageView authorized(@Context UriInfo info) throws URISyntaxException, TwitterException {
 
+        String denied = info.getQueryParameters().getFirst("denied");
+        if (denied != null)
+            return new PageView("home.mustache", null);
+
         // region get oauth_verifier from requestToken
 
         Subject subject = SecurityUtils.getSubject();

@@ -111,8 +111,6 @@ public class UsersDbImpl implements UsersDb {
     // endregion
 
     // region Twitter Users
-
-
     @Override
     public SocialUser addSocialUser(SocialUser socialUser) {
         {
